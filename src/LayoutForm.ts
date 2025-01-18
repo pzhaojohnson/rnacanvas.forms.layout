@@ -95,7 +95,7 @@ export class LayoutForm {
 
     this.domNode = document.createElement('div');
 
-    $(this.domNode).addClass(styles.basesLayoutForm);
+    $(this.domNode).addClass(styles.layoutForm);
 
     $(this.domNode)
       .append(Header())
