@@ -1,0 +1,56 @@
+.dark-solid-button {
+  margin: 0px;
+
+  border: none;
+
+  padding: 4px 32px 4px 32px;
+  border-radius: 2px;
+
+  /* use before pseudo-element for background */
+  background-color: transparent;
+  position: relative;
+  isolation: isolate;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  pointer-events: auto;
+}
+
+.dark-solid-button::before {
+  content: "";
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  border-radius: 2px;
+  background-color: #0d0d82;
+  box-shadow: 0 3px 3px rgba(213, 213, 255, 0.53);
+
+  z-index: -1;
+}
+
+.dark-solid-button:focus {
+  outline: none;
+}
+
+.dark-solid-button:hover::before {
+  transform: scale(1.05);
+  transition: transform 0.1s;
+}
+
+.dark-solid-button:active::before {
+  transform: scale(1);
+  transition: transform 0s;
+}

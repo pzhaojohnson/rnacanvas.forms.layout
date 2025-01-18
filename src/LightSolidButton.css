@@ -1,0 +1,35 @@
+.light-solid-button {
+  margin: 0px;
+
+  border: none;
+
+  padding: 4px 12px;
+  border-radius: 3px;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  color: #06064a;
+
+  background-color: rgba(219, 219, 255, 0.9);
+
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  pointer-events: auto;
+}
+
+.light-solid-button:hover {
+  background-color: rgba(175, 175, 255, 0.92);
+}
+
+.light-solid-button:active {
+  background-color: rgba(147, 147, 255, 0.92);
+}
+
+.light-solid-button:focus {
+  outline: none;
+}

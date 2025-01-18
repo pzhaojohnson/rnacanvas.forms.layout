@@ -1,0 +1,18 @@
+.header {
+  margin-top: 13px;
+  margin-bottom: 0px;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  /**
+   * So that the form can be dragged around while clicking on top of the header.
+   */
+  pointer-events: none;
+}

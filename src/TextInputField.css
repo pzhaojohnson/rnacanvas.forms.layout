@@ -1,0 +1,13 @@
+.text-input-field {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+
+  user-select: none;
+
+  cursor: text;
+
+  pointer-events: auto;
+}

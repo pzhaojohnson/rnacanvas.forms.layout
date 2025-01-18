@@ -1,0 +1,15 @@
+.num-span {
+  font-weight: 700;
+  color: black;
+}
+
+.num-selected-bases-view {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  color: #1b1b1c;
+
+  user-select: none;
+  -webkit-user-select: none;
+}

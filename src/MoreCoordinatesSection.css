@@ -1,0 +1,63 @@
+.header-caret {}
+
+.header {
+  margin: 0px;
+
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  padding: 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+
+  background-color: transparent;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  text-decoration: none;
+}
+
+.header:hover {
+  text-decoration: underline;
+}
+
+.content {
+  margin: 10px 0px 0px 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 6px;
+
+  visibility: collapse;
+  max-height: 0px;
+}
+
+.more-coordinates-section {
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.open .content {
+  visibility: visible;
+  max-height: none;
+}
+
+.open .header-caret {
+  transform: rotate(90deg);
+}
