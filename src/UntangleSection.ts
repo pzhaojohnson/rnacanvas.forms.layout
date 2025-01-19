@@ -6,7 +6,7 @@ import type { LiveSet } from './LiveSet';
 
 import type { LayoutFormOptions } from './LayoutFormOptions';
 
-import { untangle } from '@rnacanvas/bases-layout';
+import { untangle } from '@rnacanvas/layout';
 
 import { isFiniteNumber } from '@rnacanvas/value-check';
 

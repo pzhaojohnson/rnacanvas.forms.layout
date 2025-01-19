@@ -12,7 +12,7 @@ import { FiniteNumberInput } from './FiniteNumberInput';
 
 import { TextInputField } from './TextInputField';
 
-import { linearize } from '@rnacanvas/bases-layout';
+import { linearize } from '@rnacanvas/layout';
 
 import { isFiniteNumber } from '@rnacanvas/value-check';
 

@@ -10,7 +10,7 @@ import { SVG } from '@svgdotjs/svg.js';
 
 import * as styles from './RotateButton.css';
 
-import { rotate } from '@rnacanvas/bases-layout';
+import { rotate } from '@rnacanvas/layout';
 
 import { direction } from '@rnacanvas/points';
 

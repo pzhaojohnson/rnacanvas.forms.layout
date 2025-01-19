@@ -10,9 +10,9 @@ import * as styles from './FlipSection.css';
 
 import { LightSolidButton } from './LightSolidButton';
 
-import { flipX, flipY } from '@rnacanvas/bases-layout';
+import { flipX, flipY } from '@rnacanvas/layout';
 
-import { flipSelfX, flipSelfY } from '@rnacanvas/bases-layout';
+import { flipSelfX, flipSelfY } from '@rnacanvas/layout';
 
 export function FlipSection(selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
   let flipXButton = LightSolidButton();

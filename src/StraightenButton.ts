@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 
 import { DarkSolidButton } from './DarkSolidButton';
 
-import { straighten } from '@rnacanvas/bases-layout';
+import { straighten } from '@rnacanvas/layout';
 
 export function StraightenButton(selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
   let straightenButton = DarkSolidButton();

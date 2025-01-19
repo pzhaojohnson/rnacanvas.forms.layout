@@ -12,7 +12,7 @@ import { TextInput } from './TextInput';
 
 import { TextInputField } from './TextInputField';
 
-import { Centroid } from '@rnacanvas/bases-layout';
+import { Centroid } from '@rnacanvas/layout';
 
 import { isFiniteNumber } from '@rnacanvas/value-check';
 

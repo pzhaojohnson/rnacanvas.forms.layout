@@ -14,9 +14,9 @@ import { TextInput } from './TextInput';
 
 import { TextInputField } from './TextInputField';
 
-import { MinCenterX, MaxCenterX } from '@rnacanvas/bases-layout';
+import { MinCenterX, MaxCenterX } from '@rnacanvas/layout';
 
-import { MinCenterY, MaxCenterY } from '@rnacanvas/bases-layout';
+import { MinCenterY, MaxCenterY } from '@rnacanvas/layout';
 
 import { isFiniteNumber } from '@rnacanvas/value-check';
 

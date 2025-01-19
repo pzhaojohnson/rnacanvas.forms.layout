@@ -12,7 +12,7 @@ import { TextInputField } from './TextInputField';
 
 import { RotateButton } from './RotateButton';
 
-import { Direction } from '@rnacanvas/bases-layout';
+import { Direction } from '@rnacanvas/layout';
 
 import { degrees, radians } from '@rnacanvas/math';
 
