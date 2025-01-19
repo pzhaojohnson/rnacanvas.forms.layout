@@ -10,7 +10,7 @@ export function Header() {
 
   $(header)
     .addClass(styles.header)
-    .append('Bases Layout');
+    .append('Layout');
 
   return header;
 }
