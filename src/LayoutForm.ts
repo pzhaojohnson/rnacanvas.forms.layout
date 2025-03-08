@@ -58,7 +58,7 @@ export class LayoutForm {
   constructor(targetDrawing: Drawing, private selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
     let numSelectedBasesView = new NumSelectedBasesView(selectedBases);
 
-    let centroidSection = new CentroidSection(selectedBases, options);
+    let centroidSection = new CentroidSection(selectedBases, targetDrawing, options);
     let moreCoordinatesSection = new MoreCoordinatesSection(selectedBases, options);
     let directionSection = new DirectionSection(selectedBases, options);
     let flipSection = FlipSection(selectedBases, options);

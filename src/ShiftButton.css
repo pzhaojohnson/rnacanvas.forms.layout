@@ -1,5 +1,5 @@
-.rotate-button {
-  margin-left: 20px;
+.shift-button {
+  margin-left: 21px;
 
   border: none;
   border-radius: 3px;
@@ -22,11 +22,11 @@
   pointer-events: auto;
 }
 
-.rotate-button:hover {
+.shift-button:hover {
   background-color: #404044;
 }
 
-.rotate-button:active {
+.shift-button:active {
   background-color: #77777d;
 
   cursor: grabbing;

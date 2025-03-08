@@ -1,5 +1,7 @@
 import type { Nucleobase } from './Nucleobase';
 
+import type { Drawing } from './Drawing';
+
 import type { LiveSet } from './LiveSet';
 
 import type { LayoutFormOptions } from './LayoutFormOptions';
@@ -17,6 +19,8 @@ import { Centroid } from '@rnacanvas/layout';
 import { isFiniteNumber } from '@rnacanvas/value-check';
 
 import { areWithin } from '@rnacanvas/math';
+
+import { ShiftButton } from './ShiftButton';
 
 const centroidCoordinateNames = ['x', 'y'] as const;
 
@@ -87,7 +91,7 @@ export class CentroidSection {
 
   readonly domNode: HTMLDivElement;
 
-  constructor(private selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
+  constructor(private selectedBases: LiveSet<Nucleobase>, parentDrawing: Drawing, options?: LayoutFormOptions) {
     this.centroidXInput = new CentroidCoordinateInput('x', selectedBases, options);
     this.centroidYInput = new CentroidCoordinateInput('y', selectedBases, options);
 
@@ -108,11 +112,13 @@ export class CentroidSection {
       .addClass(styles.centerLabel)
       .append('Center');
 
+    let shiftButton = new ShiftButton(selectedBases, parentDrawing, options);
+
     this.domNode = document.createElement('div');
 
     $(this.domNode)
       .addClass(styles.centroidSection)
-      .append(fieldsContainer, centerLabel);
+      .append(fieldsContainer, centerLabel, shiftButton.domNode);
   }
 
   refresh(): void {

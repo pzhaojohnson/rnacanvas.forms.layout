@@ -6,8 +6,6 @@ import type { LayoutFormOptions } from './LayoutFormOptions';
 
 import * as $ from 'jquery';
 
-import { SVG } from '@svgdotjs/svg.js';
-
 import * as styles from './RotateButton.css';
 
 import { rotate } from '@rnacanvas/layout';

@@ -11,6 +11,9 @@ export interface Drawing {
    */
   readonly domNode: SVGSVGElement;
 
+  readonly horizontalClientScaling: number;
+  readonly verticalClientScaling: number;
+
   /**
    * All of the secondary bonds in the drawing.
    */
