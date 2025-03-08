@@ -12,4 +12,7 @@
   font-weight: 700;
   font-style: normal;
   color: black;
+
+  user-select: none;
+  -webkit-user-select: none;
 }
