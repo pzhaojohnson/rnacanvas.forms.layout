@@ -17,26 +17,29 @@ import { direction } from '@rnacanvas/points';
 import { midpoint } from '@rnacanvas/points';
 
 function RotateIcon() {
-  let draw = SVG();
+  let rotateIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
-  draw
-    .viewbox(-3.5, -3.5, 25, 25)
-    .attr({ 'width': '25px', 'height': '25px' })
-    .css({ 'transform': 'rotate(45deg)' });
+  rotateIcon.setAttribute('viewBox', '0 0 24 24');
 
-  draw.path()
-    .attr('d', 'M 17 9 A 8 8 270 1 1 9 1')
-    .attr('stroke', 'white')
-    .attr('stroke-width', 1.5)
-    .attr('fill', 'none');
+  rotateIcon.setAttribute('width', '24');
+  rotateIcon.setAttribute('height', '24');
 
-  draw.path()
-    .attr('d', 'M 9 -3 L 13 1 L 9 5 z')
-    .attr('stroke', 'white')
-    .attr('stroke-width', 1)
-    .attr('fill', 'white');
+  rotateIcon.innerHTML = `
+    <path
+      d="M 18 18 A 6 6 0 1 1 6, 6"
+      stroke="white" stroke-width="1" fill="none"
+    ></path>
+    <path
+      d="M 6 18 A 6 6 0 1 1 18, 6"
+      stroke="white"l stroke-width="1" fill="none"
+    ></path>
+    <path
+      d="M 18 6 l 3 -3 v 6 h -6 z"
+      stroke="white" stroke-width="1" fill="white"
+    ></path>
+  `;
 
-  return draw.node;
+  return rotateIcon;
 }
 
 export class RotateButton {
