@@ -62,12 +62,12 @@ export class LayoutForm {
     let moreCoordinatesSection = new MoreCoordinatesSection(selectedBases, options);
     let directionSection = new DirectionSection(selectedBases, options);
     let flipSection = FlipSection(selectedBases, options);
+    let stemmifySection = StemmifySection(selectedBases, options);
+    let roundSection = RoundSection(selectedBases, options);
+    let untangleSection = UntangleSection(targetDrawing, selectedBases, options);
     let linearizeSection = LinearizeSection(selectedBases, options);
     let straightenButton = StraightenButton(selectedBases, options);
     let circularizeSection = new CircularizeSection(selectedBases, options);
-    let roundSection = RoundSection(selectedBases, options);
-    let stemmifySection = StemmifySection(selectedBases, options);
-    let untangleSection = UntangleSection(targetDrawing, selectedBases, options);
 
     let layoutControls = document.createElement('div');
 
@@ -78,12 +78,12 @@ export class LayoutForm {
       .append(moreCoordinatesSection.domNode)
       .append(directionSection.domNode)
       .append(flipSection)
+      .append(stemmifySection)
+      .append(roundSection)
+      .append(untangleSection)
       .append(linearizeSection)
       .append(straightenButton)
-      .append(circularizeSection.domNode)
-      .append(roundSection)
-      .append(stemmifySection)
-      .append(untangleSection);
+      .append(circularizeSection.domNode);
 
     let content = document.createElement('div');
 
