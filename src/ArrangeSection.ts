@@ -29,7 +29,7 @@ export class ArrangeSection {
   readonly #defaultSpacing = 20;
   readonly #defaultBasePairSpacing = 10;
   readonly #defaultHairpinLoopSpacing = 10;
-  readonly #defaultTerminiGap = 20;
+  readonly #defaultTerminiGap = 40;
 
   readonly domNode = document.createElement('div');
 
