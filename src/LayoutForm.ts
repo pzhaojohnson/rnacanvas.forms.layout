@@ -32,6 +32,8 @@ import { RoundSection } from './RoundSection';
 
 import { StemmifySection } from './StemmifySection';
 
+import { ArrangeSection } from './ArrangeSection';
+
 import { UntangleSection } from './UntangleSection';
 
 import { CloseButton } from './CloseButton';
@@ -58,12 +60,20 @@ export class LayoutForm {
   constructor(targetDrawing: Drawing, private selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
     let numSelectedBasesView = new NumSelectedBasesView(selectedBases);
 
+    let targetApp = {
+      drawing: targetDrawing,
+      selectedBases: selectedBases,
+      beforeMovingBases: options?.beforeMovingBases,
+      afterMovingBases: options?.afterMovingBases,
+    };
+
     let centroidSection = new CentroidSection(selectedBases, targetDrawing, options);
     let moreCoordinatesSection = new MoreCoordinatesSection(selectedBases, options);
     let directionSection = new DirectionSection(selectedBases, options);
     let flipSection = FlipSection(selectedBases, options);
     let stemmifySection = StemmifySection(selectedBases, options);
     let roundSection = RoundSection(selectedBases, options);
+    let arrangeSection = new ArrangeSection(targetApp);
     let untangleSection = UntangleSection(targetDrawing, selectedBases, options);
     let linearizeSection = LinearizeSection(selectedBases, options);
     let straightenButton = StraightenButton(selectedBases, options);
@@ -80,6 +90,7 @@ export class LayoutForm {
       .append(flipSection)
       .append(stemmifySection)
       .append(roundSection)
+      .append(arrangeSection.domNode)
       .append(untangleSection)
       .append(linearizeSection)
       .append(straightenButton)
