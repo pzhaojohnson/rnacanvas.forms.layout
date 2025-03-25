@@ -72,7 +72,7 @@ export class FlipSection {
       new KeyBinding('F', () => flipXButton.click(), { shiftKey: true }),
       new KeyBinding('F', () => flipYButton.click(), { shiftKey: true, altKey: true }),
       // holding the Alt key can change other character keys
-      new KeyBinding('Ƒ', () => flipYButton.click(), { shiftKey: true, altKey: true }),
+      new KeyBinding('Ï', () => flipYButton.click(), { shiftKey: true, altKey: true }),
       new KeyBinding('F', () => flipSelfXButton.click()),
       new KeyBinding('F', () => flipSelfYButton.click(), { altKey: true }),
       // holding the Alt key can change other character keys
