@@ -55,6 +55,7 @@ export class LayoutForm {
    */
   private readonly domNode: HTMLDivElement;
 
+  #flipSection;
   #roundSection;
   #arrangeSection;
   #untangleSection;
@@ -76,7 +77,7 @@ export class LayoutForm {
     let centroidSection = new CentroidSection(selectedBases, targetDrawing, options);
     let moreCoordinatesSection = new MoreCoordinatesSection(selectedBases, options);
     let directionSection = new DirectionSection(selectedBases, options);
-    let flipSection = FlipSection(selectedBases, options);
+    this.#flipSection = new FlipSection(selectedBases, options);
     this.#roundSection = new RoundSection(selectedBases, options);
     this.#arrangeSection = new ArrangeSection(targetApp);
     this.#untangleSection = new UntangleSection(targetDrawing, selectedBases, options);
@@ -93,7 +94,7 @@ export class LayoutForm {
       .append(centroidSection.domNode)
       .append(moreCoordinatesSection.domNode)
       .append(directionSection.domNode)
-      .append(flipSection)
+      .append(this.#flipSection.domNode)
       .append(this.#roundSection.domNode)
       .append(this.#arrangeSection.domNode)
       .append(this.#untangleSection.domNode)
@@ -185,6 +186,7 @@ export class LayoutForm {
 
   get keyBindings(): Iterable<KeyBinding> {
     return [
+      ...this.#flipSection.keyBindings,
       ...this.#roundSection.keyBindings,
       ...this.#arrangeSection.keyBindings,
       ...this.#untangleSection.keyBindings,
