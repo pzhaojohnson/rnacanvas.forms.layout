@@ -1,10 +1,17 @@
 .dark-solid-button {
   margin: 0px;
+  padding: 0px;
 
   border: none;
 
-  padding: 4px 32px 4px 32px;
+  width: 121px;
+  height: 25px;
+
   border-radius: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   /* use before pseudo-element for background */
   background-color: transparent;
