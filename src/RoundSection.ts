@@ -16,40 +16,53 @@ import { round } from '@rnacanvas/layout';
 
 import { isFiniteNumber } from '@rnacanvas/value-check';
 
+import { KeyBinding } from '@rnacanvas/utilities';
+
 const defaultSpacing = 10;
 
-export function RoundSection(selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
-  let spacingInput = FiniteNumberInput();
+export class RoundSection{
+  readonly domNode;
 
-  spacingInput.value = defaultSpacing.toString();
+  #keyBinding;
 
-  let spacingField = TextInputField('Spacing', spacingInput);
+  constructor(selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
+    let spacingInput = FiniteNumberInput();
 
-  $(spacingField).css({ margin: '14px 0px 0px 14px' });
+    spacingInput.value = defaultSpacing.toString();
 
-  let roundButton = DarkSolidButton();
+    let spacingField = TextInputField('Spacing', spacingInput);
 
-  $(roundButton)
-    .text('Round');
+    $(spacingField).css({ margin: '14px 0px 0px 14px' });
 
-  $(roundButton).on('click', () => {
-    let spacing = Number.parseFloat(spacingInput.value);
+    let roundButton = DarkSolidButton();
 
-    spacing = isFiniteNumber(spacing) ? spacing : defaultSpacing;
+    $(roundButton)
+      .text('Round');
 
-    options?.beforeMovingBases ? options.beforeMovingBases() : {};
-    round([...selectedBases], { spacing });
-    options?.afterMovingBases ? options.afterMovingBases() : {};
-  });
+    $(roundButton).on('click', () => {
+      let spacing = Number.parseFloat(spacingInput.value);
 
-  let roundSection = document.createElement('div');
+      spacing = isFiniteNumber(spacing) ? spacing : defaultSpacing;
 
-  $(roundSection)
-    .append(roundButton)
-    .append(spacingField)
-    .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
+      options?.beforeMovingBases ? options.beforeMovingBases() : {};
+      round([...selectedBases], { spacing });
+      options?.afterMovingBases ? options.afterMovingBases() : {};
+    });
 
-  $(roundSection).css({ marginTop: '41px' });
+    this.domNode = document.createElement('div');
 
-  return roundSection;
+    $(this.domNode)
+      .append(roundButton)
+      .append(spacingField)
+      .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
+
+    $(this.domNode).css({ marginTop: '41px' });
+
+    this.#keyBinding = new KeyBinding('R', () => roundButton.click());
+    this.#keyBinding.owner = this.domNode;
+  }
+
+  get keyBindings() {
+    return [this.#keyBinding];
+  }
 }

@@ -16,6 +16,8 @@ import { TextInputField } from './TextInputField';
 
 import { isFiniteNumber } from '@rnacanvas/value-check';
 
+import { KeyBinding } from '@rnacanvas/utilities';
+
 export class ArrangeSection {
   #targetApp;
 
@@ -32,6 +34,8 @@ export class ArrangeSection {
   readonly #defaultTerminiGap = 40;
 
   readonly domNode = document.createElement('div');
+
+  #keyBinding;
 
   constructor(targetApp: App) {
     this.#targetApp = targetApp;
@@ -85,6 +89,13 @@ export class ArrangeSection {
 
       this.#targetApp.afterMovingBases ? this.#targetApp.afterMovingBases() : {};
     });
+
+    this.#keyBinding = new KeyBinding('A', () => this.#button.click());
+    this.#keyBinding.owner = this.domNode;
+  }
+
+  get keyBindings() {
+    return [this.#keyBinding];
   }
 }
 

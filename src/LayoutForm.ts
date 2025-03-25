@@ -40,6 +40,8 @@ import { CloseButton } from './CloseButton';
 
 import { DragTranslater } from '@rnacanvas/forms';
 
+import type { KeyBinding } from '@rnacanvas/utilities';
+
 interface Refreshable {
   refresh(): void;
 }
@@ -52,6 +54,10 @@ export class LayoutForm {
    * The actual DOM node that is the bases-layout form.
    */
   private readonly domNode: HTMLDivElement;
+
+  #roundSection;
+  #arrangeSection;
+  #untangleSection;
 
   private readonly refreshableComponents: Refreshable[];
 
@@ -71,9 +77,9 @@ export class LayoutForm {
     let moreCoordinatesSection = new MoreCoordinatesSection(selectedBases, options);
     let directionSection = new DirectionSection(selectedBases, options);
     let flipSection = FlipSection(selectedBases, options);
-    let roundSection = RoundSection(selectedBases, options);
-    let arrangeSection = new ArrangeSection(targetApp);
-    let untangleSection = UntangleSection(targetDrawing, selectedBases, options);
+    this.#roundSection = new RoundSection(selectedBases, options);
+    this.#arrangeSection = new ArrangeSection(targetApp);
+    this.#untangleSection = new UntangleSection(targetDrawing, selectedBases, options);
     let stemmifySection = StemmifySection(selectedBases, options);
     let linearizeSection = LinearizeSection(selectedBases, options);
     let straightenButton = StraightenButton(selectedBases, options);
@@ -88,9 +94,9 @@ export class LayoutForm {
       .append(moreCoordinatesSection.domNode)
       .append(directionSection.domNode)
       .append(flipSection)
-      .append(roundSection)
-      .append(arrangeSection.domNode)
-      .append(untangleSection)
+      .append(this.#roundSection.domNode)
+      .append(this.#arrangeSection.domNode)
+      .append(this.#untangleSection.domNode)
       .append(stemmifySection)
       .append(linearizeSection)
       .append(straightenButton)
@@ -131,6 +137,8 @@ export class LayoutForm {
       .append(closeButton);
 
     this.dragTranslater = new DragTranslater(this.domNode);
+
+    [...this.keyBindings].forEach(kb => kb.owner = this.domNode);
   }
 
   private refresh(): void {
@@ -173,5 +181,13 @@ export class LayoutForm {
    */
   private close(): void {
     this.domNode.remove();
+  }
+
+  get keyBindings(): Iterable<KeyBinding> {
+    return [
+      ...this.#roundSection.keyBindings,
+      ...this.#arrangeSection.keyBindings,
+      ...this.#untangleSection.keyBindings,
+    ];
   }
 }
