@@ -31,7 +31,7 @@ const defaultHairpinLoopSpacing = 10;
 export class UntangleSection {
   readonly domNode;
 
-  #keyBinding;
+  #keyBindings;
 
   constructor(targetDrawing: Drawing, selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
     let spacingInput = FiniteNumberInput();
@@ -85,11 +85,16 @@ export class UntangleSection {
 
     $(this.domNode).css({ marginTop: '41px' });
 
-    this.#keyBinding = new KeyBinding('A', () => untangleButton.click(), { altKey: true });
-    this.#keyBinding.owner = this.domNode;
+    this.#keyBindings = [
+      new KeyBinding('A', () => untangleButton.click(), { altKey: true }),
+      // pressing the Alt key might change the character key
+      new KeyBinding('Å', () => untangleButton.click(), { altKey: true }),
+    ];
+
+    [...this.#keyBindings].forEach(kb => kb.owner = this.domNode);
   }
 
   get keyBindings() {
-    return [this.#keyBinding];
+    return [...this.#keyBindings];
   }
 }
