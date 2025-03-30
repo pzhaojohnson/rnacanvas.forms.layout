@@ -37,6 +37,8 @@ export function StemmifySection(selectedBases: LiveSet<Nucleobase>, options?: La
 
   stemmifyButton.textContent = 'Stemmify';
 
+  stemmifyButton.tooltip = 'Arrange as a stem.';
+
   stemmifyButton.onClick = () => {
     let basePairLength = Number.parseFloat(basePairLengthInput.value);
     let basePairSpacing = Number.parseFloat(basePairSpacingInput.value);
