@@ -27,11 +27,11 @@ export function LinearizeSection(selectedBases: LiveSet<Nucleobase>, options?: L
 
   $(spacingField).css({ margin: '14px 0px 0px 14px' });
 
-  let linearizeButton = DarkSolidButton();
+  let linearizeButton = new DarkSolidButton();
 
   linearizeButton.textContent = 'Linearize';
 
-  linearizeButton.addEventListener('click', () => {
+  linearizeButton.onClick = () => {
     let spacing = Number.parseFloat(spacingInput.value);
 
     spacing = isFiniteNumber(spacing) ? spacing : defaultSpacing;
@@ -39,12 +39,12 @@ export function LinearizeSection(selectedBases: LiveSet<Nucleobase>, options?: L
     options?.beforeMovingBases ? options.beforeMovingBases() : {};
     linearize([...selectedBases], { spacing });
     options?.afterMovingBases ? options.afterMovingBases() : {};
-  });
+  };
 
   let linearizeSection = document.createElement('div');
 
   $(linearizeSection)
-    .append(linearizeButton)
+    .append(linearizeButton.domNode)
     .append(spacingField)
     .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 

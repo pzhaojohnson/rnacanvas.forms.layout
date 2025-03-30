@@ -21,7 +21,7 @@ import { KeyBinding } from '@rnacanvas/utilities';
 export class ArrangeSection {
   #targetApp;
 
-  #button = DarkSolidButton();
+  #button = new DarkSolidButton();
 
   #spacingField = new FiniteNumberField('Base-Pair Length');
   #basePairSpacingField = new FiniteNumberField('Base-Pair Spacing');
@@ -42,6 +42,8 @@ export class ArrangeSection {
 
     this.#button.textContent = 'Arrange';
 
+    this.#button.tooltip = 'Arrange bases according to secondary structure. [ A ]';
+
     this.#spacingField.domNode.style.margin = '14px 0px 0px 14px';
     this.#basePairSpacingField.domNode.style.margin = '10px 0px 0px 14px';
     this.#hairpinLoopSpacingField.domNode.style.margin = '10px 0px 0px 14px';
@@ -53,7 +55,7 @@ export class ArrangeSection {
     this.#terminiGapField.value = this.#defaultTerminiGap;
 
     this.domNode.append(
-      this.#button,
+      this.#button.domNode,
       this.#spacingField.domNode,
       this.#basePairSpacingField.domNode,
       this.#hairpinLoopSpacingField.domNode,
@@ -64,7 +66,7 @@ export class ArrangeSection {
 
     this.domNode.style.marginTop = '41px';
 
-    this.#button.addEventListener('click', () => {
+    this.#button.onClick = () => {
       let spacing = this.#spacingField.value;
       let basePairSpacing = this.#basePairSpacingField.value;
       let hairpinLoopSpacing = this.#hairpinLoopSpacingField.value;
@@ -88,7 +90,7 @@ export class ArrangeSection {
       arrange(selectedBases, basePairs, { spacing, basePairSpacing, hairpinLoopSpacing, terminiGap });
 
       this.#targetApp.afterMovingBases ? this.#targetApp.afterMovingBases() : {};
-    });
+    };
 
     this.#keyBinding = new KeyBinding('A', () => this.#button.click());
     this.#keyBinding.owner = this.domNode;

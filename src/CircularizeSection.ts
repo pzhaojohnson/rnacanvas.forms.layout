@@ -39,12 +39,11 @@ export class CircularizeSection {
     $(spacingField).css({ margin: '14px 0px 0px 14px' });
     $(terminiGapField).css({ margin: '10px 0px 0px 14px' });
 
-    let circularizeButton = DarkSolidButton();
+    let circularizeButton = new DarkSolidButton();
 
-    $(circularizeButton)
-      .text('Circularize');
+    circularizeButton.textContent = 'Circularize';
 
-    $(circularizeButton).on('click', () => {
+    circularizeButton.onClick = () => {
       let spacing = Number.parseFloat(spacingInput.value);
       let terminiGap = Number.parseFloat(terminiGapInput.value);
 
@@ -56,12 +55,12 @@ export class CircularizeSection {
       circularize([...selectedBases], { spacing, terminiGap });
 
       options?.afterMovingBases ? options.afterMovingBases() : {};
-    });
+    };
 
     this.domNode = document.createElement('div');
 
     $(this.domNode)
-      .append(circularizeButton)
+      .append(circularizeButton.domNode)
       .append(spacingField)
       .append(terminiGapField)
       .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });

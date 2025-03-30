@@ -20,6 +20,8 @@ import { TextInputField } from './TextInputField';
 
 import { KeyBinding } from '@rnacanvas/utilities';
 
+import { detectMacOS } from '@rnacanvas/utilities';
+
 type BasePair = [Nucleobase, Nucleobase];
 
 const defaultSpacing = 20;
@@ -50,11 +52,14 @@ export class UntangleSection {
     $(basePairSpacingField).css({ margin: '10px 0px 0px 14px' });
     $(hairpinLoopSpacingField).css({ margin: '10px 0px 0px 14px' });
 
-    let untangleButton = DarkSolidButton();
+    let untangleButton = new DarkSolidButton();
 
-    $(untangleButton).text('Untangle');
+    untangleButton.textContent = 'Untangle';
 
-    $(untangleButton).on('click', () => {
+    untangleButton.tooltip = 'Apply the RNAcanvas untangling algorithm.';
+    untangleButton.tooltip += detectMacOS() ? ' [ ⌥ A ]' : ' [ Alt+A ]';
+
+    untangleButton.onClick = () => {
       let spacing = Number.parseFloat(spacingInput.value);
       let basePairSpacing = Number.parseFloat(basePairSpacingInput.value);
       let hairpinLoopSpacing = Number.parseFloat(hairpinLoopSpacingInput.value);
@@ -72,12 +77,12 @@ export class UntangleSection {
       options?.beforeMovingBases ? options.beforeMovingBases() : {};
       untangle([...selectedBases], basePairs, { spacing, basePairSpacing, hairpinLoopSpacing });
       options?.afterMovingBases ? options.afterMovingBases() : {};
-    });
+    };
 
     this.domNode = document.createElement('div');
 
     $(this.domNode)
-      .append(untangleButton)
+      .append(untangleButton.domNode)
       .append(spacingField)
       .append(basePairSpacingField)
       .append(hairpinLoopSpacingField)

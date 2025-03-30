@@ -34,12 +34,13 @@ export class RoundSection{
 
     $(spacingField).css({ margin: '14px 0px 0px 14px' });
 
-    let roundButton = DarkSolidButton();
+    let roundButton = new DarkSolidButton();
 
-    $(roundButton)
-      .text('Round');
+    roundButton.textContent = 'Round';
 
-    $(roundButton).on('click', () => {
+    roundButton.tooltip = 'Round the selected bases. [ R ]';
+
+    roundButton.onClick = () => {
       let spacing = Number.parseFloat(spacingInput.value);
 
       spacing = isFiniteNumber(spacing) ? spacing : defaultSpacing;
@@ -47,12 +48,12 @@ export class RoundSection{
       options?.beforeMovingBases ? options.beforeMovingBases() : {};
       round([...selectedBases], { spacing });
       options?.afterMovingBases ? options.afterMovingBases() : {};
-    });
+    };
 
     this.domNode = document.createElement('div');
 
     $(this.domNode)
-      .append(roundButton)
+      .append(roundButton.domNode)
       .append(spacingField)
       .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 

@@ -100,7 +100,7 @@ export class LayoutForm {
       .append(this.#untangleSection.domNode)
       .append(stemmifySection)
       .append(linearizeSection)
-      .append(straightenButton)
+      .append(straightenButton.domNode)
       .append(circularizeSection.domNode);
 
     let content = document.createElement('div');

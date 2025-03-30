@@ -33,12 +33,11 @@ export function StemmifySection(selectedBases: LiveSet<Nucleobase>, options?: La
   $(basePairLengthField).css({ margin: '14px 0px 0px 14px' });
   $(basePairSpacingField).css({ margin: '10px 0px 0px 14px' });
 
-  let stemmifyButton = DarkSolidButton();
+  let stemmifyButton = new DarkSolidButton();
 
-  $(stemmifyButton)
-    .text('Stemmify');
+  stemmifyButton.textContent = 'Stemmify';
 
-  $(stemmifyButton).on('click', () => {
+  stemmifyButton.onClick = () => {
     let basePairLength = Number.parseFloat(basePairLengthInput.value);
     let basePairSpacing = Number.parseFloat(basePairSpacingInput.value);
 
@@ -48,12 +47,12 @@ export function StemmifySection(selectedBases: LiveSet<Nucleobase>, options?: La
     options?.beforeMovingBases ? options.beforeMovingBases() : {};
     stemmify([...selectedBases], { basePairLength, basePairSpacing });
     options?.afterMovingBases ? options.afterMovingBases() : {};
-  });
+  };
 
   let stemmifySection = document.createElement('div');
 
   $(stemmifySection)
-    .append(stemmifyButton)
+    .append(stemmifyButton.domNode)
     .append(basePairLengthField)
     .append(basePairSpacingField)
     .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
