@@ -51,7 +51,7 @@ export class DarkSolidButton {
   }
 
   set tooltip(tooltip) {
-    this.#tooltip.textContent = this.textContent;
+    this.#tooltip.textContent = tooltip;
   }
 }
 
@@ -66,10 +66,10 @@ class Tooltip {
     // hidden by default (until is given text content)
     this.domNode.style.visibility = 'hidden';
 
-    this.#p.classList.add(styles['tooltip-text']);
+    this.#p.classList.add(styles.tooltipText);
 
     let textContainer = document.createElement('div');
-    textContainer.classList.add(styles['tooltip-text-container']);
+    textContainer.classList.add(styles.tooltipTextContainer);
     textContainer.append(this.#p);
 
     this.domNode.append(textContainer);
