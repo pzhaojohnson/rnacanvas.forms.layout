@@ -42,7 +42,7 @@ export class ArrangeSection {
 
     this.#button.textContent = 'Arrange';
 
-    this.#button.tooltip = 'Arrange bases according to secondary structure. [ A ]';
+    this.#button.tooltip = 'Arrange according to secondary structure. [ A ]';
 
     this.#spacingField.domNode.style.margin = '14px 0px 0px 14px';
     this.#basePairSpacingField.domNode.style.margin = '10px 0px 0px 14px';

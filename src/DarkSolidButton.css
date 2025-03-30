@@ -1,3 +1,7 @@
+.container {
+  position: relative;
+}
+
 .dark-solid-button {
   margin: 0px;
   padding: 0px;
@@ -64,8 +68,8 @@
 
 .tooltip {
   position: absolute;
-  bottom: -6px;
-  left: 132px;
+  top: -61px;
+  left: -37px;
 
   height: 36px;
   padding: 0px 20px 0px 20px;
@@ -102,12 +106,12 @@
   content: "";
 
   border-style: solid;
-  border-color: transparent black transparent transparent;
-  border-width: 7px 19px;
+  border-color: black transparent transparent transparent;
+  border-width: 18px 9px;
 
   position: absolute;
-  bottom: 11px;
-  right: 100%;
+  top: 100%;
+  left: 52px;
 }
 
 .tooltip-text-container {
