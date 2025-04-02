@@ -1,10 +1,10 @@
 {
   "name": "@rnacanvas/forms.layout",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "The Layout form",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pzhaojohnson/rnacanvas.forms.layout.git"
+    "url": "git+https://github.com/pzhaojohnson/rnacanvas.forms.layout.git"
   },
   "main": "./dist/index.js",
   "scripts": {
