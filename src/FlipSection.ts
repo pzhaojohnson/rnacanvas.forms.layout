@@ -16,6 +16,8 @@ import { flipSelfX, flipSelfY } from '@rnacanvas/layout';
 
 import { KeyBinding } from '@rnacanvas/utilities';
 
+import { detectMacOS } from '@rnacanvas/utilities';
+
 export class FlipSection {
   readonly domNode;
 
@@ -74,15 +76,15 @@ export class FlipSection {
       new KeyBinding('Ƒ', () => flipSelfYButton.click(), { altKey: true }),
     ];
 
-    flipXButton.tooltip.textContent = '[ ⇧ F ]';
-    flipYButton.tooltip.textContent = '[ ⌥ ⇧ F ]';
-    flipSelfXButton.tooltip.textContent = '[ F ]';
-    flipSelfYButton.tooltip.textContent = '[ ⌥ F ]';
+    flipXButton.tooltip.textContent = detectMacOS() ? '[ ⇧ F ]' : '[ Shift+F ]';
+    flipYButton.tooltip.textContent = detectMacOS() ? '[ ⌥ ⇧ F ]' : '[ Shift+Alt+F ]';
+    flipSelfXButton.tooltip.textContent = detectMacOS() ? '[ F ]' : '[ F ]';
+    flipSelfYButton.tooltip.textContent = detectMacOS() ? '[ ⌥ F ]' : '[ Alt+F ]';
 
-    flipXButton.tooltip.domNode.style.left = '-21px';
-    flipYButton.tooltip.domNode.style.left = '-21px';
-    flipSelfXButton.tooltip.domNode.style.left = '-9px';
-    flipSelfYButton.tooltip.domNode.style.left = '-9px';
+    flipXButton.tooltip.domNode.style.left = '-31px';
+    flipYButton.tooltip.domNode.style.left = '-31px';
+    flipSelfXButton.tooltip.domNode.style.left = '-18px';
+    flipSelfYButton.tooltip.domNode.style.left = '-18px';
   }
 
   get keyBindings() {
