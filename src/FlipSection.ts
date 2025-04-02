@@ -22,39 +22,34 @@ export class FlipSection {
   #keyBindings;
 
   constructor(selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
-    let flipXButton = LightSolidButton();
-    let flipYButton = LightSolidButton();
-    let flipSelfXButton = LightSolidButton();
-    let flipSelfYButton = LightSolidButton();
+    let flipXButton = new LightSolidButton('X');
+    let flipYButton = new LightSolidButton('Y');
+    let flipSelfXButton = new LightSolidButton('Self-X');
+    let flipSelfYButton = new LightSolidButton('Self-Y');
 
-    $(flipXButton).text('X');
-    $(flipYButton).text('Y');
-    $(flipSelfXButton).text('Self-X');
-    $(flipSelfYButton).text('Self-Y');
-
-    $(flipXButton).on('click', () => {
+    flipXButton.onClick = () => {
       options?.beforeMovingBases ? options.beforeMovingBases() : {};
       flipX([...selectedBases]);
       options?.afterMovingBases ? options.afterMovingBases() : {};
-    });
+    };
 
-    $(flipYButton).on('click', () => {
+    flipYButton.onClick = () => {
       options?.beforeMovingBases ? options.beforeMovingBases() : {};
       flipY([...selectedBases]);
       options?.afterMovingBases ? options.afterMovingBases() : {};
-    });
+    };
 
-    $(flipSelfXButton).on('click', () => {
+    flipSelfXButton.onClick = () => {
       options?.beforeMovingBases ? options.beforeMovingBases() : {};
       flipSelfX([...selectedBases]);
       options?.afterMovingBases ? options.afterMovingBases() : {};
-    });
+    };
 
-    $(flipSelfYButton).on('click', () => {
+    flipSelfYButton.onClick = () => {
       options?.beforeMovingBases ? options.beforeMovingBases() : {};
       flipSelfY([...selectedBases]);
       options?.afterMovingBases ? options.afterMovingBases() : {};
-    });
+    };
 
     let flipLabel = document.createElement('p');
 
@@ -66,7 +61,7 @@ export class FlipSection {
 
     $(this.domNode)
       .addClass(styles.flipSection)
-      .append(flipLabel, flipXButton, flipYButton, flipSelfXButton, flipSelfYButton);
+      .append(flipLabel, flipXButton.domNode, flipYButton.domNode, flipSelfXButton.domNode, flipSelfYButton.domNode);
 
     this.#keyBindings = [
       new KeyBinding('F', () => flipXButton.click(), { shiftKey: true }),
@@ -78,6 +73,11 @@ export class FlipSection {
       // holding the Alt key can change other character keys
       new KeyBinding('Ƒ', () => flipSelfYButton.click(), { altKey: true }),
     ];
+
+    flipXButton.tooltip = '[ ⇧ F ]';
+    flipYButton.tooltip = '[ ⌥ ⇧ F ]';
+    flipSelfXButton.tooltip = '[ F ]';
+    flipSelfYButton.tooltip = '[ ⌥ F ]';
   }
 
   get keyBindings() {
