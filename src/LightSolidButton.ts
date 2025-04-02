@@ -7,7 +7,7 @@ export class LightSolidButton {
 
   #button = document.createElement('p');
 
-  #tooltip = new Tooltip();
+  readonly tooltip = new Tooltip();
 
   constructor(textContent?: string, onClick?: () => void) {
     this.domNode.classList.add(styles.container);
@@ -18,7 +18,7 @@ export class LightSolidButton {
 
     onClick ? this.onClick = onClick : {};
 
-    this.domNode.append(this.#button, this.#tooltip.domNode);
+    this.domNode.append(this.#button, this.tooltip.domNode);
   }
 
   get textContent() {
@@ -39,14 +39,6 @@ export class LightSolidButton {
 
   click(): void {
     this.#button.click();
-  }
-
-  get tooltip() {
-    return this.#tooltip.textContent;
-  }
-
-  set tooltip(tooltip) {
-    this.#tooltip.textContent = tooltip;
   }
 }
 

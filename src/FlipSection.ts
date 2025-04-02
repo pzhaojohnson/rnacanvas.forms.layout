@@ -74,10 +74,15 @@ export class FlipSection {
       new KeyBinding('Ƒ', () => flipSelfYButton.click(), { altKey: true }),
     ];
 
-    flipXButton.tooltip = '[ ⇧ F ]';
-    flipYButton.tooltip = '[ ⌥ ⇧ F ]';
-    flipSelfXButton.tooltip = '[ F ]';
-    flipSelfYButton.tooltip = '[ ⌥ F ]';
+    flipXButton.tooltip.textContent = '[ ⇧ F ]';
+    flipYButton.tooltip.textContent = '[ ⌥ ⇧ F ]';
+    flipSelfXButton.tooltip.textContent = '[ F ]';
+    flipSelfYButton.tooltip.textContent = '[ ⌥ F ]';
+
+    flipXButton.tooltip.domNode.style.left = '-21px';
+    flipYButton.tooltip.domNode.style.left = '-21px';
+    flipSelfXButton.tooltip.domNode.style.left = '-9px';
+    flipSelfYButton.tooltip.domNode.style.left = '-9px';
   }
 
   get keyBindings() {
