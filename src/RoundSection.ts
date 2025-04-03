@@ -57,7 +57,7 @@ export class RoundSection{
       .append(spacingField)
       .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 
-    $(this.domNode).css({ marginTop: '41px' });
+    $(this.domNode).css({ marginTop: '40px' });
 
     this.#keyBinding = new KeyBinding('R', () => roundButton.click());
     this.#keyBinding.owner = this.domNode;

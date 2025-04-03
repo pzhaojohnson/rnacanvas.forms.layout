@@ -88,7 +88,7 @@ export class UntangleSection {
       .append(hairpinLoopSpacingField)
       .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 
-    $(this.domNode).css({ marginTop: '41px' });
+    $(this.domNode).css({ marginTop: '40px' });
 
     this.#keyBindings = [
       new KeyBinding('A', () => untangleButton.click(), { altKey: true }),

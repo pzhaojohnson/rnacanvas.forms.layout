@@ -65,6 +65,6 @@ export class CircularizeSection {
       .append(terminiGapField)
       .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 
-    $(this.domNode).css({ marginTop: '55px' });
+    $(this.domNode).css({ marginTop: '56px' });
   }
 }
