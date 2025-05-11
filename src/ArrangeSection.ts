@@ -45,9 +45,9 @@ export class ArrangeSection {
     this.#button.tooltip = 'Arrange according to secondary structure. [ A ]';
 
     this.#spacingField.domNode.style.margin = '14px 0px 0px 14px';
-    this.#basePairSpacingField.domNode.style.margin = '10px 0px 0px 14px';
-    this.#hairpinLoopSpacingField.domNode.style.margin = '10px 0px 0px 14px';
-    this.#terminiGapField.domNode.style.margin = '10px 0px 0px 14px';
+    this.#basePairSpacingField.domNode.style.margin = '9px 0px 0px 14px';
+    this.#hairpinLoopSpacingField.domNode.style.margin = '9px 0px 0px 14px';
+    this.#terminiGapField.domNode.style.margin = '9px 0px 0px 14px';
 
     this.#spacingField.value = this.#defaultSpacing;
     this.#basePairSpacingField.value = this.#defaultBasePairSpacing;
@@ -64,7 +64,7 @@ export class ArrangeSection {
 
     $(this.domNode).css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 
-    this.domNode.style.marginTop = '41px';
+    this.domNode.style.marginTop = '44px';
 
     this.#button.onClick = () => {
       let spacing = this.#spacingField.value;

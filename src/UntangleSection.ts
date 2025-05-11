@@ -49,8 +49,8 @@ export class UntangleSection {
     let hairpinLoopSpacingField = TextInputField('Hairpin Loop Spacing', hairpinLoopSpacingInput);
 
     $(spacingField).css({ margin: '14px 0px 0px 14px' });
-    $(basePairSpacingField).css({ margin: '10px 0px 0px 14px' });
-    $(hairpinLoopSpacingField).css({ margin: '10px 0px 0px 14px' });
+    $(basePairSpacingField).css({ margin: '9px 0px 0px 14px' });
+    $(hairpinLoopSpacingField).css({ margin: '9px 0px 0px 14px' });
 
     let untangleButton = new DarkSolidButton();
 
@@ -88,7 +88,7 @@ export class UntangleSection {
       .append(hairpinLoopSpacingField)
       .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 
-    $(this.domNode).css({ marginTop: '40px' });
+    $(this.domNode).css({ marginTop: '43px' });
 
     this.#keyBindings = [
       new KeyBinding('A', () => untangleButton.click(), { altKey: true }),

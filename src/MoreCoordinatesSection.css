@@ -39,14 +39,14 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 6px;
+  gap: 9px;
 
   visibility: collapse;
   max-height: 0px;
 }
 
 .more-coordinates-section {
-  margin-top: 30px;
+  margin-top: 32px;
 
   display: flex;
   flex-direction: column;

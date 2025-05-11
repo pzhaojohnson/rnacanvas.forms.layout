@@ -37,7 +37,7 @@ export class CircularizeSection {
     let terminiGapField = TextInputField('Termini Gap', terminiGapInput);
 
     $(spacingField).css({ margin: '14px 0px 0px 14px' });
-    $(terminiGapField).css({ margin: '10px 0px 0px 14px' });
+    $(terminiGapField).css({ margin: '9px 0px 0px 14px' });
 
     let circularizeButton = new DarkSolidButton();
 
@@ -65,6 +65,6 @@ export class CircularizeSection {
       .append(terminiGapField)
       .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 
-    $(this.domNode).css({ marginTop: '56px' });
+    $(this.domNode).css({ marginTop: '57px' });
   }
 }

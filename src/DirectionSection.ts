@@ -86,7 +86,7 @@ export class DirectionSection {
       .append(rotateButton.domNode)
       .css({ display: 'flex', flexDirection: 'row', alignItems: 'center' });
 
-    $(this.domNode).css({ marginTop: '33px' });
+    $(this.domNode).css({ marginTop: '39px' });
   }
 
   refresh(): void {

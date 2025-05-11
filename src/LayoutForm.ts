@@ -108,7 +108,7 @@ export class LayoutForm {
     $(content)
       .append(numSelectedBasesView.domNode)
       .append(layoutControls)
-      .css({ margin: '27px 0px 0px 21px' })
+      .css({ margin: '28px 0px 0px 21px' })
       .css({ pointerEvents: 'none' });
 
     this.domNode = document.createElement('div');

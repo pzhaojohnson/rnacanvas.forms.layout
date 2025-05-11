@@ -98,7 +98,7 @@ export class CentroidSection {
     let centroidXField = TextInputField('X', this.centroidXInput.domNode);
     let centroidYField = TextInputField('Y', this.centroidYInput.domNode);
 
-    $(centroidYField).css({ marginTop: '11px' });
+    $(centroidYField).css({ marginTop: '10px' });
 
     let fieldsContainer = document.createElement('div');
 

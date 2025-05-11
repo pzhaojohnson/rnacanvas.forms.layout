@@ -31,7 +31,7 @@ export function StemmifySection(selectedBases: LiveSet<Nucleobase>, options?: La
   let basePairSpacingField = TextInputField('Base-Pair Spacing', basePairSpacingInput);
 
   $(basePairLengthField).css({ margin: '14px 0px 0px 14px' });
-  $(basePairSpacingField).css({ margin: '10px 0px 0px 14px' });
+  $(basePairSpacingField).css({ margin: '9px 0px 0px 14px' });
 
   let stemmifyButton = new DarkSolidButton();
 
@@ -59,7 +59,7 @@ export function StemmifySection(selectedBases: LiveSet<Nucleobase>, options?: La
     .append(basePairSpacingField)
     .css({ display: 'flex', flexDirection: 'column', alignItems: 'start' });
 
-  $(stemmifySection).css({ marginTop: '33px' });
+  $(stemmifySection).css({ marginTop: '42px' });
 
   return stemmifySection;
 }

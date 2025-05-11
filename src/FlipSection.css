@@ -1,5 +1,5 @@
 .flip-label {
-  margin-right: 1px;
+  margin: 0px 1px 0px 0px;
 
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
@@ -12,10 +12,10 @@
 }
 
 .flip-section {
-  margin-top: 25px;
+  margin-top: 36px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
