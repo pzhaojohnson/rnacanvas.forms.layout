@@ -43,7 +43,7 @@ function HeaderCaret() {
 }
 
 function Header() {
-  let header = document.createElement('button');
+  let header = document.createElement('div');
 
   $(header)
     .addClass(styles.header)
