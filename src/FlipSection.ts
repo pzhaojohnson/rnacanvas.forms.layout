@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 
 import * as styles from './FlipSection.css';
 
-import { LightSolidButton } from './LightSolidButton';
+import { SmallButton } from './SmallButton';
 
 import { flipX, flipY } from '@rnacanvas/layout';
 
@@ -24,10 +24,10 @@ export class FlipSection {
   #keyBindings;
 
   constructor(selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
-    let flipXButton = new LightSolidButton('X');
-    let flipYButton = new LightSolidButton('Y');
-    let flipSelfXButton = new LightSolidButton('Self-X');
-    let flipSelfYButton = new LightSolidButton('Self-Y');
+    let flipXButton = new SmallButton('X');
+    let flipYButton = new SmallButton('Y');
+    let flipSelfXButton = new SmallButton('Self-X');
+    let flipSelfYButton = new SmallButton('Self-Y');
 
     flipXButton.onClick = () => {
       options?.beforeMovingBases ? options.beforeMovingBases() : {};
@@ -80,11 +80,6 @@ export class FlipSection {
     flipYButton.tooltip.textContent = detectMacOS() ? '[ ⌥ ⇧ F ]' : '[ Shift+Alt+F ]';
     flipSelfXButton.tooltip.textContent = detectMacOS() ? '[ F ]' : '[ F ]';
     flipSelfYButton.tooltip.textContent = detectMacOS() ? '[ ⌥ F ]' : '[ Alt+F ]';
-
-    flipXButton.tooltip.domNode.style.left = '-31px';
-    flipYButton.tooltip.domNode.style.left = '-31px';
-    flipSelfXButton.tooltip.domNode.style.left = '-18px';
-    flipSelfYButton.tooltip.domNode.style.left = '-18px';
   }
 
   get keyBindings() {

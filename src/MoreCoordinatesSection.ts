@@ -33,7 +33,7 @@ function HeaderCaret() {
 
   draw.path()
     .attr('d', 'M 1 1 L 5 5 L 1 9')
-    .attr('stroke', 'black')
+    .attr('stroke', 'white')
     .attr('stroke-width', 2)
     .attr('stroke-linecap', 'round')
     .attr('stroke-linejoin', 'round')

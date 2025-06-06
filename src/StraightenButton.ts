@@ -6,12 +6,12 @@ import type { LayoutFormOptions } from './LayoutFormOptions';
 
 import * as $ from 'jquery';
 
-import { DarkSolidButton } from './DarkSolidButton';
+import { WideButton } from './WideButton';
 
 import { straighten } from '@rnacanvas/layout';
 
 export function StraightenButton(selectedBases: LiveSet<Nucleobase>, options?: LayoutFormOptions) {
-  let straightenButton = new DarkSolidButton();
+  let straightenButton = new WideButton();
 
   straightenButton.textContent = 'Straighten';
 

@@ -1,6 +1,6 @@
 .num-span {
   font-weight: 700;
-  color: black;
+  color: white;
 }
 
 .num-selected-bases-view {
@@ -10,7 +10,7 @@
   font-size: 12px;
   font-weight: 500;
   font-style: normal;
-  color: #1b1b1c;
+  color: white;
 
   user-select: none;
   -webkit-user-select: none;

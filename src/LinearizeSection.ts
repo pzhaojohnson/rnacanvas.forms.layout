@@ -6,7 +6,7 @@ import type { LayoutFormOptions } from './LayoutFormOptions';
 
 import * as $ from 'jquery';
 
-import { DarkSolidButton } from './DarkSolidButton';
+import { WideButton } from './WideButton';
 
 import { FiniteNumberInput } from './FiniteNumberInput';
 
@@ -27,7 +27,7 @@ export function LinearizeSection(selectedBases: LiveSet<Nucleobase>, options?: L
 
   $(spacingField).css({ margin: '14px 0px 0px 14px' });
 
-  let linearizeButton = new DarkSolidButton();
+  let linearizeButton = new WideButton();
 
   linearizeButton.textContent = 'Linearize';
 

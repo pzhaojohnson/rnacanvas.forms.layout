@@ -6,7 +6,7 @@ import type { LayoutFormOptions } from './LayoutFormOptions';
 
 import * as $ from 'jquery';
 
-import { DarkSolidButton } from './DarkSolidButton';
+import { WideButton } from './WideButton';
 
 import { FiniteNumberInput } from './FiniteNumberInput';
 
@@ -34,7 +34,7 @@ export class RoundSection{
 
     $(spacingField).css({ margin: '14px 0px 0px 14px' });
 
-    let roundButton = new DarkSolidButton();
+    let roundButton = new WideButton();
 
     roundButton.textContent = 'Round';
 

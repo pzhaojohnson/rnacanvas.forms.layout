@@ -1,14 +1,13 @@
 .rotate-button {
   margin-left: 36px;
 
-  border: none;
+  border: 1px solid #cdcde0;
   border-radius: 3px;
-  box-shadow: 0px 0px 10px #d4d4dd;
 
   outline: none;
 
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
 
   display: flex;
   flex-direction: row;
@@ -23,11 +22,11 @@
 }
 
 .rotate-button:hover {
-  background-color: #404044;
+  background-color: #212123;
 }
 
 .rotate-button:active {
-  background-color: #77777d;
+  background-color: #2f2f38;
 
   cursor: grabbing;
 }

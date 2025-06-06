@@ -6,7 +6,7 @@ import type { LayoutFormOptions } from './LayoutFormOptions';
 
 import * as $ from 'jquery';
 
-import { DarkSolidButton } from './DarkSolidButton';
+import { WideButton } from './WideButton';
 
 import { FiniteNumberInput } from './FiniteNumberInput';
 
@@ -33,7 +33,7 @@ export function StemmifySection(selectedBases: LiveSet<Nucleobase>, options?: La
   $(basePairLengthField).css({ margin: '14px 0px 0px 14px' });
   $(basePairSpacingField).css({ margin: '9px 0px 0px 14px' });
 
-  let stemmifyButton = new DarkSolidButton();
+  let stemmifyButton = new WideButton();
 
   stemmifyButton.textContent = 'Stemmify';
 

@@ -6,7 +6,7 @@ import type { LayoutFormOptions } from './LayoutFormOptions';
 
 import * as $ from 'jquery';
 
-import { DarkSolidButton } from './DarkSolidButton';
+import { WideButton } from './WideButton';
 
 import { FiniteNumberInput } from './FiniteNumberInput';
 
@@ -39,7 +39,7 @@ export class CircularizeSection {
     $(spacingField).css({ margin: '14px 0px 0px 14px' });
     $(terminiGapField).css({ margin: '9px 0px 0px 14px' });
 
-    let circularizeButton = new DarkSolidButton();
+    let circularizeButton = new WideButton();
 
     circularizeButton.textContent = 'Circularize';
 

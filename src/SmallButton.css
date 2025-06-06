@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+}
+
+.small-button {
+  margin: 0px;
+
+  border: none;
+
+  padding: 4px 12px;
+  border-radius: 3px;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  font-style: normal;
+  color: #001010;
+
+  background-color: #aff;
+
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  pointer-events: auto;
+}
+
+.small-button:hover {
+  background-color: #5dbebe;
+}
+
+.small-button:active {
+  background-color: #308b8b;
+}
+
+.small-button:focus {
+  outline: none;
+}

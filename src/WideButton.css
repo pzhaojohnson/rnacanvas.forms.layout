@@ -1,0 +1,66 @@
+.container {
+  position: relative;
+}
+
+.wide-button {
+  margin: 0px;
+  padding: 0px;
+
+  border: none;
+
+  width: 121px;
+  height: 25px;
+
+  border-radius: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* use before pseudo-element for background */
+  background-color: transparent;
+  position: relative;
+  isolation: isolate;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  color: #000c0c;
+
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  pointer-events: auto;
+}
+
+.wide-button::before {
+  content: "";
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  border-radius: 2px;
+  background-color: #8dffff;
+
+  z-index: -1;
+}
+
+.wide-button:focus {
+  outline: none;
+}
+
+.wide-button:hover::before {
+  transform: scale(1.05);
+  transition: transform 0.1s;
+}
+
+.wide-button:active::before {
+  transform: scale(1);
+  transition: transform 0s;
+}

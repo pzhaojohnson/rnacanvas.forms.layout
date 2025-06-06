@@ -8,7 +8,7 @@ import { arrange } from '@rnacanvas/layout';
 
 import * as $ from 'jquery';
 
-import { DarkSolidButton } from './DarkSolidButton';
+import { WideButton } from './WideButton';
 
 import { FiniteNumberInput } from './FiniteNumberInput';
 
@@ -21,7 +21,7 @@ import { KeyBinding } from '@rnacanvas/utilities';
 export class ArrangeSection {
   #targetApp;
 
-  #button = new DarkSolidButton();
+  #button = new WideButton();
 
   #spacingField = new FiniteNumberField('Base-Pair Length');
   #basePairSpacingField = new FiniteNumberField('Base-Pair Spacing');

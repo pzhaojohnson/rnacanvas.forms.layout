@@ -12,7 +12,7 @@ import { isFiniteNumber } from '@rnacanvas/value-check';
 
 import * as $ from 'jquery';
 
-import { DarkSolidButton } from './DarkSolidButton';
+import { WideButton } from './WideButton';
 
 import { FiniteNumberInput } from './FiniteNumberInput';
 
@@ -52,7 +52,7 @@ export class UntangleSection {
     $(basePairSpacingField).css({ margin: '9px 0px 0px 14px' });
     $(hairpinLoopSpacingField).css({ margin: '9px 0px 0px 14px' });
 
-    let untangleButton = new DarkSolidButton();
+    let untangleButton = new WideButton();
 
     untangleButton.textContent = 'Untangle';
 
