@@ -23,7 +23,7 @@
 
   padding: 25px 0px 50px 31px;
 
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.88);
 }
 
 .no-bases-selected .layout-controls {
