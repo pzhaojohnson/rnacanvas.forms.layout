@@ -20,5 +20,9 @@ export function TextInputField(name: string, textInput: HTMLInputElement) {
     .addClass(styles.textInputField)
     .append(textInput, nameSpan);
 
+  textInput.addEventListener('focus', () => textInputField.style.color = 'yellow');
+
+  textInput.addEventListener('blur', () => textInputField.style.color = '');
+
   return textInputField;
 }
