@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: transparent;
+  background-color: black;
 
   cursor: grab;
 
@@ -22,11 +22,18 @@
 }
 
 .shift-button:hover {
-  background-color: #212123;
+  background-color: #353539;
 }
 
 .shift-button:active {
-  background-color: #2f2f38;
+  background-color: #353539;
+
+  border-color: yellow;
 
   cursor: grabbing;
+}
+
+.shift-button:active path {
+  stroke: yellow;
+  fill: yellow;
 }
