@@ -112,6 +112,12 @@ export class CentroidSection {
       .addClass(styles.centerLabel)
       .append('Center');
 
+    this.centroidXInput.domNode.addEventListener('focus', () => centerLabel.style.color = 'yellow');
+    this.centroidYInput.domNode.addEventListener('focus', () => centerLabel.style.color = 'yellow');
+
+    this.centroidXInput.domNode.addEventListener('blur', () => centerLabel.style.color = '');
+    this.centroidYInput.domNode.addEventListener('blur', () => centerLabel.style.color = '');
+
     let shiftButton = new ShiftButton(selectedBases, parentDrawing, options);
 
     this.domNode = document.createElement('div');
