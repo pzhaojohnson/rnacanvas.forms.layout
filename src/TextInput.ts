@@ -9,5 +9,8 @@ export function TextInput() {
     .attr({ 'type': 'text' })
     .addClass(styles.textInput);
 
+  // prevent unintentional paste event propagation
+  textInput.addEventListener('paste', event => event.stopPropagation());
+
   return textInput;
 }
