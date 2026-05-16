@@ -142,7 +142,7 @@ export class LayoutForm {
     [...this.keyBindings].forEach(kb => kb.owner = this.domNode);
   }
 
-  private refresh(): void {
+  refresh(): void {
     this.refreshableComponents.forEach(component => component.refresh());
 
     if ([...this.selectedBases].length == 0) {
@@ -153,13 +153,20 @@ export class LayoutForm {
   }
 
   /**
+   * Undoes any dragging of the Layout form by the user.
+   */
+  reposition(): void {
+    this.dragTranslater.untranslate();
+  }
+
+  /**
    * Appends the bases-layout form to the provided container node.
    */
   appendTo(container: Node): void {
     // make sure form contents are up-to-date
     this.refresh();
 
-    this.dragTranslater.untranslate();
+    this.reposition();
 
     container.appendChild(this.domNode);
   }
