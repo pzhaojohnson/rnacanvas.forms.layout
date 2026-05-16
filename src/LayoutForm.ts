@@ -53,7 +53,7 @@ export class LayoutForm {
   /**
    * The actual DOM node that is the bases-layout form.
    */
-  private readonly domNode: HTMLDivElement;
+  readonly domNode: HTMLDivElement;
 
   #flipSection;
   #roundSection;
